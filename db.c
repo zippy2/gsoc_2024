@@ -17,7 +17,9 @@ struct _Db {
  *
  * Allocates and initializes Db structure.
  *
- * If @get_refs_cb is NULL the DbItem does not support references
+ * If @get_refs_cb is NULL the DbItem does not support references.
+ * Otherwise it returns a zero terminated array of reference IDs. The
+ * array is then freed by DbPrune().
  *
  * Use DbFree() to free the structure or use g_autoptr(Db);
  *
